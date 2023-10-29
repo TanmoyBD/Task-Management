@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Add custom styles here */
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-white text-2xl font-bold">TaskManager</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-white">Home</a>
+                    <a href="#" class="text-white">Tasks</a>
+                    <a href="#" class="text-white">About</a>
+                    <a href="#" class="text-white">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="burger" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-blue-500 p-4">
+        <div class="flex flex-col space-y-4">
+            <a href="#" class="text-white">Home</a>
+            <a href="#" class="text-white">Tasks</a>
+            <a href="#" class="text-white">About</a>
+            <a href="#" class="text-white">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('burger').addEventListener('click', function () {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
