@@ -16,5 +16,11 @@ class Tasks(models.Model):
         return self.title
 
 
+
+
+
+
+
+
 class Demo(models.Model):
     name =models.CharField(max_length=20)

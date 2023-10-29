@@ -2,25 +2,56 @@
 {% include 'base.html' %}
 
 {% block content %}
-  <body class="bg-gray-100 font-sans">
-    <main class="container mx-auto mt-8 p-4">
-      <section style="display:flex; justify-content:center; margin: auto; text-align: center;" class="">
-        <div style="flex-basis: 67%; display:flex; flex-direction:column; align-items:center; ">
-          <h1 class="text-4xl font-bold mb-4">Welcome to TaskManager</h1>
-          <p class="text-gray-700 mb-4">Add Tasks</p>
-          <a href=" " class="text-blue-500 hover:text-blue-700"><img src="{% static 'images/plus_png.png' %}" alt="Plus Icon" class="w-28 h-28 rounded-full" /></a>
-        </div>
-        <div id="right_side" style="flex-basis: 33%; ">
-          <div>
-            <h1  class="text-4xl font-bold mb-4">𝐔𝐧𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐞𝐝 𝐓𝐚𝐬𝐤𝐬</h1>
-          </div>
 
-          <div id="task_Box" style=" height: 100vh; overflow: auto;">
-            
-            
-          </div>
+<body class="bg-gray-100 font-sans">
+  <main class="container mx-auto mt-8 p-4">
+    <section style="display:flex; justify-content:center; margin: auto; text-align: center;" class="">
+      <div style="flex-basis: 67%; display:flex; flex-direction:column; align-items:center; ">
+        <h1 class="text-4xl font-bold mb-4">Welcome to TaskManager</h1>
+        <p class="text-gray-700 mb-4">Add Tasks</p>
+        <button onclick="toggleTaskForm()" id="addTaskButton"
+          class="w-28 h-28 rounded-full bg-blue-500 hover:bg-blue-700 text-white">
+          <img src="{% static 'images/plus_png.png' %}" alt="Plus Icon" class="w-28 h-28 rounded-full" />
+        </button>
+
+        <div id="task_form" style="visibility: hidden;">
+          <form id="create_task_form" class="mt-4">
+              <div class="mb-4">
+                  <label for="title" class="block text-gray-700 font-bold mb-2">Task Title:</label>
+                  <input type="text" name="title" id="title" placeholder="Task Title" required
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="description" class="block text-gray-700 font-bold mb-2">Task Description:</label>
+                  <textarea name="description" id="description" placeholder="Task Description" required
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"></textarea>
+              </div>
+              <div class="mb-4">
+                  <label for="is_complete" class="block text-gray-700 font-bold mb-2">Is Complete:</label>
+                  <input type="checkbox" name="is_complete" id="is_complete" class="mr-2 leading-tight">
+                  <span class="text-gray-700">Completed</span>
+              </div>
+              <button type="submit"
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                  Submit
+              </button>
+          </form>
+      </div>
+      
+      
+
+
+      </div>
+      <div id="right_side" style="flex-basis: 33%; ">
+        <div>
+          <h1 class="text-4xl font-bold mb-4">𝐔𝐧𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐞𝐝 𝐓𝐚𝐬𝐤𝐬</h1>
         </div>
-      </section>
-    </main>
-  </body>
+        <div id="task_Box" style=" height: 100vh; overflow: auto;">
+
+
+      </div>
+      </div>
+    </section>
+  </main>
+</body>
 {% endblock %}
