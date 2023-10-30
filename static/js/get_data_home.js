@@ -119,6 +119,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    if (username) {
+        document.getElementById('welcomeMessage').innerText = `Welcome, ${username}!`;
+    }
+});
+
+
 // document.addEventListener('DOMContentLoaded', function() {
 //   fetchData();
 // });

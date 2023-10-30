@@ -25,4 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Home, name = 'home'),
     path('task/', include('management.urls')),
+    path('user/', include('account.urls')),
+    path('singup/',views.Singup,name= 'singup'),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
